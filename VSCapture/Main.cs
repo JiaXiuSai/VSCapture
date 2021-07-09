@@ -35,9 +35,9 @@ namespace VSCapture
 
         static void Main(string[] args)
         {
-            Console.WriteLine("VitalSignsCaptureWave v1.009 (C)2019 John George K.");
-            Console.WriteLine("For command line usage: -help");
-            Console.WriteLine();
+            //Console.WriteLine("VitalSignsCaptureWave v1.009 (C)2019 John George K.");
+            //Console.WriteLine("For command line usage: -help");
+            //Console.WriteLine();
 
             // Create a new SerialPort object with default settings.
             DSerialPort _serialPort = DSerialPort.getInstance;
@@ -67,6 +67,7 @@ namespace VSCapture
             }
             else
             {
+                /*
                 Console.WriteLine("Select the Port to which Datex AS3 Monitor is to be connected, Available Ports:");
                 foreach (string s in SerialPort.GetPortNames())
                 {
@@ -75,7 +76,8 @@ namespace VSCapture
 
 
                 Console.Write("COM port({0}): ", _serialPort.PortName.ToString());
-                portName = Console.ReadLine();
+                */
+                portName = "/dev/ttyUSB0";
 
             }
 
@@ -100,7 +102,7 @@ namespace VSCapture
 				{
 				_serialPort.DataReceived += new SerialDataReceivedEventHandler(p_DataReceived);
 				}
-
+                /*
                 if(!parser.Arguments.ContainsKey("port")) 
                 {
                     Console.WriteLine("You may now connect the serial cable to the Datex AS3 Monitor");
@@ -109,7 +111,7 @@ namespace VSCapture
                     Console.ReadKey(true);
                 
                 }
-                								
+                */				
                 //if (_serialPort.CtsHolding)
                 {
                     if(parser.Arguments.ContainsKey("interval"))
@@ -118,14 +120,16 @@ namespace VSCapture
                     }
                     else
                     {
+                        /*
                         Console.WriteLine();
                         Console.Write("Enter Numeric data Transmission interval (seconds):");
-                        sInterval = Console.ReadLine();
+                        */
+                        sInterval = 5;
                     }
 
                     short nInterval = 5;
                     if (sInterval != "") nInterval = Convert.ToInt16(sInterval);
-                    if (nInterval < 5) nInterval = 5;
+                    if (nInterval < 1) nInterval = 1;
 
                     string sDataExportset;
                     if (parser.Arguments.ContainsKey("export"))
@@ -134,14 +138,15 @@ namespace VSCapture
                     }
                     else
                     {
+                        /*
                         Console.WriteLine();
                         Console.WriteLine("Data export options:");
                         Console.WriteLine("1. Export as CSV files");
                         Console.WriteLine("2. Export as CSV files and JSON to URL");
                         Console.WriteLine();
                         Console.Write("Choose data export option (1-2):");
-
-                        sDataExportset = Console.ReadLine();
+                        */
+                        sDataExportset = 1;
 
                     }
 
@@ -185,6 +190,7 @@ namespace VSCapture
                     }
                     else
                     {
+                        /*
                         Console.WriteLine();
                         Console.WriteLine("Waveform data Transmission sets:");
                         Console.WriteLine("0. None");
@@ -196,8 +202,8 @@ namespace VSCapture
                         Console.WriteLine("6. ECG1, ECG2, ECG3");
                         Console.WriteLine();
                         Console.Write("Choose Waveform data Transmission set (0-6):");
-
-                        sWaveformSet = Console.ReadLine();
+                        */
+                        sWaveformSet = 0;
                         
                     }
 
@@ -205,11 +211,11 @@ namespace VSCapture
 					if (sWaveformSet != "") nWaveformSet = Convert.ToInt16(sWaveformSet);
 
 
-					Console.WriteLine("Requesting {0} second Transmission from monitor", nInterval);
+					//Console.WriteLine("Requesting {0} second Transmission from monitor", nInterval);
 
 					//Console.WriteLine("Requesting Transmission from monitor");
-                    Console.WriteLine();
-                    Console.WriteLine("Data will be written to CSV file AS3ExportData.csv in same folder");
+                    //Console.WriteLine();
+                    //Console.WriteLine("Data will be written to CSV file AS3ExportData.csv in same folder");
 
                     //_serialPort.RequestTransfer(DataConstants.DRI_PH_DISPL, nInterval); // Add Request Transmission
 								
@@ -244,7 +250,7 @@ namespace VSCapture
 					}
                 }
 
-                Console.WriteLine("Press Escape button to Stop");
+                //Console.WriteLine("Press Escape button to Stop");
 				
 				if(_serialPort.OSIsUnix()) 
 					{
@@ -429,5 +435,6 @@ namespace VSCapture
             return Arguments.ContainsKey(name);
         }
     }
+
 
 }
