@@ -998,8 +998,10 @@ namespace VSCapture
                 m_strbuildvalues.Remove(m_strbuildvalues.Length - 1, 1);
                 m_strbuildvalues.Replace(",,", ",");
 
-                // Added
+                // Output to stdout
                 Console.WriteLine(m_strbuildvalues);
+                // Flush stdout
+                if (Console.out != null) Console.Out.Flush();
                 
                 ExportNumValListToCSVFile(pathcsv, m_strbuildvalues);
 
