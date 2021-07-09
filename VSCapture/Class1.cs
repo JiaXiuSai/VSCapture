@@ -1001,7 +1001,9 @@ namespace VSCapture
                 // Output to stdout
                 Console.WriteLine(m_strbuildvalues);
                 // Flush stdout
-                if (Console.out != null) Console.Out.Flush();
+                if (Console.Out != null) {
+                    Console.Out.Flush();
+                }
                 
                 ExportNumValListToCSVFile(pathcsv, m_strbuildvalues);
 
