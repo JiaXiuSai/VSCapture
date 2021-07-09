@@ -130,7 +130,8 @@ namespace VSCapture
                     short nInterval = 5;
                     if (sInterval != "") nInterval = Convert.ToInt16(sInterval);
                     if (nInterval < 1) nInterval = 1;
-
+                    Console.Write(sInterval);
+                    Console.Write(nInterval);
                     string sDataExportset;
                     if (parser.Arguments.ContainsKey("export"))
                     {
@@ -204,7 +205,7 @@ namespace VSCapture
                         Console.Write("Choose Waveform data Transmission set (0-6):");
                         */
                         sWaveformSet = 0;
-                        
+                          
                     }
 
                     short nWaveformSet = 1;
