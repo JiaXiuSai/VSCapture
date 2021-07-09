@@ -573,6 +573,9 @@ namespace VSCapture
                     dtDateTime = dtDateTime.AddSeconds(unixtime);
                     m_strTimestamp = dtDateTime.ToString("G", DateTimeFormatInfo.InvariantInfo);
 
+                    //Console.WriteLine();
+                    //Console.WriteLine("Time:{0}", dtDateTime.ToString());
+
                     ShowBasicSubRecord(phdata_ptr);
                     ShowExt1and2SubRecord(phdata_ptr);
 
@@ -997,7 +1000,7 @@ namespace VSCapture
 
                 // Added
                 Console.WriteLine(m_strbuildvalues);
-
+                
                 ExportNumValListToCSVFile(pathcsv, m_strbuildvalues);
 
                 m_strbuildvalues.Clear();
