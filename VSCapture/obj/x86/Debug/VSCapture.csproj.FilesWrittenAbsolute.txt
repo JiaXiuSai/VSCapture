@@ -1,0 +1,5 @@
+/home/pi/work/VSCaptureWave/VSCapture/obj/x86/Debug/.NETFramework,Version=v4.7.1.AssemblyAttribute.cs
+/home/pi/work/VSCaptureWave/VSCapture/bin/Debug/VSCapture.exe.mdb
+/home/pi/work/VSCaptureWave/VSCapture/bin/Debug/VSCapture.exe
+/home/pi/work/VSCaptureWave/VSCapture/obj/x86/Debug/VSCapture.exe
+/home/pi/work/VSCaptureWave/VSCapture/obj/x86/Debug/VSCapture.exe.mdb
