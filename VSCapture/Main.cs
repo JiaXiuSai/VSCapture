@@ -129,9 +129,12 @@ namespace VSCapture
 
                     short nInterval = 5;
                     if (sInterval != "") nInterval = Convert.ToInt16(sInterval);
-                    if (nInterval < 1) nInterval = 1;
-                    Console.Write(sInterval);
-                    Console.Write(nInterval);
+                    // Limited by _serialPort.RequestTransfer calls
+                    if (nInterval < 5) nInterval = 5;
+
+                    //Console.Write(sInterval);
+                    //Console.Write(nInterval);
+
                     string sDataExportset;
                     if (parser.Arguments.ContainsKey("export"))
                     {
@@ -225,6 +228,7 @@ namespace VSCapture
 					//_serialPort.RequestTransfer(DataConstants.DRI_PH_60S_TREND, 60); // Add Trend Request Transmission
 
 					//Request transfer based on the DRI level of the monitor
+
 					_serialPort.RequestTransfer(DataConstants.DRI_PH_DISPL, nInterval, DataConstants.DRI_LEVEL_2005); // Add Request Transmission
 					_serialPort.RequestTransfer(DataConstants.DRI_PH_DISPL, nInterval, DataConstants.DRI_LEVEL_2003); // Add Request Transmission
 					_serialPort.RequestTransfer(DataConstants.DRI_PH_DISPL, nInterval, DataConstants.DRI_LEVEL_2001); // Add Request Transmission
