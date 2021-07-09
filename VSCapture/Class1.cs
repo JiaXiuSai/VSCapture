@@ -809,8 +809,8 @@ namespace VSCapture
 			ValidateAddData("Compliance", so31, 0.01, true);
 			ValidateAddData("RR", so32, 1, true);
 
-            Console.WriteLine("ECG HR {0:d}/min NIBP {1:d}/{2:d}({3:d})mmHg SpO2 {4:d}% ETCO2 {5:d}mmHg", s1, s2, s3, s4, s5,s6);
-            Console.WriteLine("IBP1 {0:d}/{1:d}({2:d})mmHg IBP2 {3:d}/{4:d}({5:d})mmHg MAC {6} T1 {7}°C T2 {8}°C", s18, s19, s20, s22, s23, s24, s9, s15, s16);
+            Console.WriteLine("Part 1: ECG HR {0:d}/min NIBP {1:d}/{2:d}({3:d})mmHg SpO2 {4:d}% ETCO2 {5:d}mmHg", s1, s2, s3, s4, s5,s6);
+            Console.WriteLine("Part 2: IBP1 {0:d}/{1:d}({2:d})mmHg IBP2 {3:d}/{4:d}({5:d})mmHg MAC {6} T1 {7}°C T2 {8}°C", s18, s19, s20, s22, s23, s24, s9, s15, s16);
 
 	    }
 
@@ -844,7 +844,7 @@ namespace VSCapture
             ValidateAddData("BIS_EMG", so9, 1, true);
             ValidateAddData("BIS_SQI", so10, 1, true);
             
-            Console.WriteLine("ST II {0:0.0}mm ST V5 {1:0.0}mm ST aVL {2:0.0}mm", s1, s2, s3);
+            Console.WriteLine("Part 3: ST II {0:0.0}mm ST V5 {1:0.0}mm ST aVL {2:0.0}mm", s1, s2, s3);
 
 
         }
@@ -1000,6 +1000,10 @@ namespace VSCapture
                 m_strbuildvalues.AppendLine();
 
                 ExportNumValListToCSVFile(pathcsv, m_strbuildvalues);
+                
+                // Added
+                Console.WriteLine("Part 4: ", m_strbuildvalues);
+
                 m_strbuildvalues.Clear();
                 m_NumericValList.RemoveRange(0, m_NumericValList.Count);
             }
