@@ -1002,8 +1002,7 @@ namespace VSCapture
                 ExportNumValListToCSVFile(pathcsv, m_strbuildvalues);
                 
                 // Added
-                Console.WriteLine("Part 4");
-                Console.WriteLine(m_strbuildvalues);
+                Console.WriteLine(m_strbuildvalues.ToString());
 
                 m_strbuildvalues.Clear();
                 m_NumericValList.RemoveRange(0, m_NumericValList.Count);
