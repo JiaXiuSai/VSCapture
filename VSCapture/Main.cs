@@ -436,4 +436,5 @@ namespace VSCapture
         }
     }
 
+
 }
