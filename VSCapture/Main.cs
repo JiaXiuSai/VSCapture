@@ -124,7 +124,7 @@ namespace VSCapture
                         Console.WriteLine();
                         Console.Write("Enter Numeric data Transmission interval (seconds):");
                         */
-                        sInterval = 5;
+                        sInterval = "5";
                     }
 
                     short nInterval = 5;
@@ -147,7 +147,7 @@ namespace VSCapture
                         Console.WriteLine();
                         Console.Write("Choose data export option (1-2):");
                         */
-                        sDataExportset = 1;
+                        sDataExportset = "1";
 
                     }
 
@@ -204,7 +204,7 @@ namespace VSCapture
                         Console.WriteLine();
                         Console.Write("Choose Waveform data Transmission set (0-6):");
                         */
-                        sWaveformSet = 0;
+                        sWaveformSet = "0";
                           
                     }
 
