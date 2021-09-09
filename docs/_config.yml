@@ -1,2 +1,5 @@
 remote_theme: pmarsceill/just-the-docs
+
+title: TheatreCapture
 logo: "/assets/theatreCaptureLogo.png"
+color_scheme: "dark"
